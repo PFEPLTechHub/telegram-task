@@ -1,0 +1,203 @@
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    color: #212529;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #dee2e6;
+}
+
+h1 {
+    text-align: center;
+    color: #0d6efd;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between label and input/select */
+}
+
+.filters label {
+    font-weight: 600;
+    color: #212529;
+}
+
+.filters select, .filters input[type="month"] {
+    padding: 8px 12px;
+    border: 2px solid #6c757d;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #212529;
+    transition: border-color 0.2s ease;
+}
+
+.filters select:focus, .filters input[type="month"]:focus {
+    outline: 3px solid #0d6efd;
+    outline-offset: 2px;
+    border-color: #0d6efd;
+}
+
+.filters button {
+    padding: 8px 15px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.filters button:hover {
+    background-color: #0b5ed7;
+}
+
+.filters button:focus {
+    outline: 3px solid #0d6efd;
+    outline-offset: 2px;
+}
+
+.status-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.status-button {
+    padding: 8px 15px;
+    border: 2px solid #dee2e6;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #212529;
+    transition: all 0.2s ease;
+}
+
+.status-button.active {
+    background-color: #0d6efd;
+    color: white;
+    border-color: #0d6efd;
+    font-weight: 600;
+}
+
+.status-button:hover:not(.active) {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.status-button:focus {
+    outline: 3px solid #0d6efd;
+    outline-offset: 2px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+thead th {
+    background-color: #212529;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    border: 1px solid #495057;
+    font-size: 14px;
+}
+
+tbody td {
+    padding: 12px;
+    border: 1px solid #dee2e6;
+    vertical-align: top;
+    word-break: break-word;
+    color: #212529;
+    font-size: 14px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+#loading-message, #no-tasks-message {
+    text-align: center;
+    font-size: 16px;
+    color: #6c757d;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.status-completed {
+    color: #198754;
+    font-weight: 600;
+}
+
+.status-pending {
+    color: #fd7e14;
+    font-weight: 600;
+}
+
+.status-overdue {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .filters button, .status-button, .filters select, .filters input[type="month"] {
+        transition: none;
+    }
+}
+
+@media (prefers-contrast: high) {
+    .status-button.active {
+        background-color: #000;
+        color: #fff;
+        border-color: #000;
+    }
+    
+    .filters button {
+        background-color: #000;
+        color: #fff;
+    }
+    
+    .status-completed { color: #000; }
+    .status-pending { color: #000; }
+    .status-overdue { color: #000; }
+} 

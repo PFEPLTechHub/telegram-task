@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Task Report Dashboard - View detailed reports of tasks, track progress, and analyze team performance with comprehensive filtering options." />
+    <meta name="keywords" content="task report, task analytics, team performance, task tracking, productivity report, task dashboard" />
+    <meta name="author" content="Task Management System" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0d6efd" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Task Report Dashboard" />
+    <meta property="og:description" content="View detailed reports of tasks, track progress, and analyze team performance with comprehensive filtering options." />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="Task Management System" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Task Report Dashboard" />
+    <meta property="twitter:description" content="View detailed reports of tasks, track progress, and analyze team performance with comprehensive filtering options." />
+    
+    <title>Task Report Dashboard - Analytics & Performance Tracking</title>
+    <link rel="stylesheet" href="/css/report.css">
+    <link rel="preconnect" href="https://telegram.org">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="container" role="main" aria-label="Task Report Dashboard">
+        <h1>Task Report</h1>
+
+        <div class="filters">
+            <div class="filter-group">
+                <label for="month-filter">Month:</label>
+                <input type="month" id="month-filter">
+            </div>
+
+            <div class="filter-group">
+                <label for="employee-filter">Employee:</label>
+                <select id="employee-filter">
+                    <option value="">All Employees</option>
+                    <!-- Employee options will be populated by JavaScript -->
+                </select>
+            </div>
+
+            <button id="apply-filters">Apply Filters</button>
+        </div>
+
+        <div class="status-filters">
+            <button class="status-button" data-status="all">All</button>
+            <button class="status-button" data-status="pending">Pending</button>
+            <button class="status-button" data-status="overdue">Overdue</button>
+            <button class="status-button" data-status="completed">Completed</button>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Description</th>
+                        <th>Assignee</th>
+                        <th>Due Date</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="report-table-body">
+                    <!-- Task rows will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <p id="loading-message">Loading tasks...</p>
+        <p id="no-tasks-message" style="display: none;">No tasks found matching the criteria.</p>
+    </div>
+
+    <script src="/js/report.js"></script>
+</body>
+</html> 
